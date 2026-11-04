@@ -13,7 +13,11 @@ jobs:
   hello:
     runs-on: ubuntu-latest
 
+    env:
+      GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+
     steps:
+  
       - name: Checkout Code
         uses: actions/checkout@v4
 
