@@ -20,6 +20,9 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
+      - name: Terraform Version
+        run: terraform version
+        
       - name: Terraform Format Check
         run: terraform fmt -check -recursive
 
@@ -28,3 +31,6 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
+        
+      - name: Terraform Plan
+        run: terraform plan
