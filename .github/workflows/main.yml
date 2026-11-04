@@ -1,0 +1,23 @@
+name: My First GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Show Date
+        run: date
+
+      - name: List Files
+        run: ls -ltr
+
+      - name: Hello Rakesh
+        run: echo "Hello Rakesh, GitHub Actions is running!"
