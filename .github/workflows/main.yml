@@ -13,11 +13,14 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Show Date
-        run: date
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
 
-      - name: List Files
-        run: ls -ltr
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive
 
-      - name: Hello Rakesh
-        run: echo "Hello Rakesh, GitHub Actions is running!"
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
