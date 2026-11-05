@@ -11,7 +11,8 @@ pipeline {
 
         stage('Terraform Version') {
             steps {
-                sh 'terraform version'
+                sh 'echo Running Pipeline from Jenkinsfile'
+		sh 'terraform version'
             }
         }
 
